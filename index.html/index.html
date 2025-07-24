@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>عيد ميلاد سعيد  queen</title>
+
 <style>
     /* إعدادات الجسم */
     body {
@@ -103,6 +106,60 @@
 
 
   </style>
+  <style>
+.heart {
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  position: relative;
+  transform: rotate(-45deg);
+  margin: 4px;
+  display: inline-block;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: pink;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: 10px;
+  top: 0;
+}
+
+/* حاويات */
+.heart-column {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  z-index: 100;
+}
+.heart-row {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  z-index: 100;
+}
+
+.left { left: 0; top: 0; }
+.right { right: 0; top: 0; }
+.top { top: 0; left: 0; }
+.bottom { bottom: 0; left: 0; }
+</style>
 </head>
 <body>
 
@@ -150,7 +207,7 @@
   font-family: Arial, sans-serif;
   text-align: center;
   z-index: 1000;
-  width: 320px;
+  width: 400px;
 ">
   <h3 style="margin: 0 0 8px 0;"></h3>
   <audio id="player" controls style="width: 100%; border-radius: 6px;">
@@ -190,11 +247,32 @@
     }
   });
 </script>
-<div class="heart-gallery">
-  <div class="heart-frame"><img src="pecs/pink.webp" alt="صورة 2"></div>
-  <div class="heart-frame"><img src="pecs/pink.webp" alt="صورة 2"></div>
- <div class="heart-frame"><img src="pecs/pink.webp" alt="صورة 2"></div>
-  <div class="heart-frame"><img src="image4.jpg" alt="صورة 4"></div>
+<!-- يمين -->
+<div class="heart-column right">
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+</div>
+
+<!-- يسار -->
+<div class="heart-column left">
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+</div>
+
+<!-- أعلى -->
+<div class="heart-row top">
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+</div>
+
+<!-- أسفل -->
+<div class="heart-row bottom">
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
+  <div class="heart"></div><div class="heart"></div><div class="heart"></div>
 </div>
 </body>
 </html>
